@@ -124,7 +124,7 @@ typedef struct
         frameCount++;
         int ret = x264_encoder_encode(x264Handle, &pNals, &iNal, &pic_in, &pic_out);
         
-        printf("encoder start! %5d\n",frameCount);
+//        printf("encoder start! %5d\n",frameCount);
 
         if (ret <= 0){
             continue;
@@ -138,7 +138,7 @@ typedef struct
         
         for ( j = 0; j < iNal; ++j){
             fwrite(pNals[j].p_payload, pNals[j].i_payload, 1, fp_dst);
-            printf("encoder succeed!====%d===%d\n",iNal,pNals[j].i_payload);
+//            printf("encoder succeed!====%d===%d\n",iNal,pNals[j].i_payload);
         }
     }
 
@@ -148,7 +148,7 @@ typedef struct
         frameCount++;
         
         int ret = x264_encoder_encode(x264Handle, &pNals, &iNal, NULL, &pic_out);
-        NSLog(@"encoder start!");
+//        NSLog(@"encoder start!");
         if (ret <= 0){
             printf("Error.\n");
             break;
@@ -158,7 +158,7 @@ typedef struct
         
         for ( j = 0; j < iNal; ++j){
             fwrite(pNals[j].p_payload, pNals[j].i_payload, 1, fp_dst);
-            printf("encoder succeed!====%d===%d\n",iNal,pNals[j].i_payload);
+//            printf("encoder succeed!====%d===%d\n",iNal,pNals[j].i_payload);
         }
     }
     
@@ -290,7 +290,7 @@ typedef struct
 
 - (void)encoderYUVData:(NSData *)yuvData {
     
-    NSLog(@"开始编码YUV数据");
+//    NSLog(@"开始编码YUV数据");
     const unsigned char *yuv420data = [yuvData bytes];
     
     int iNal   = 0;
@@ -321,7 +321,7 @@ typedef struct
             fwrite(_pNals[j].p_payload, _pNals[j].i_payload, 1, _fp_dst);
         }
     }
-    NSLog(@"YUV数据编码完成");
+//    NSLog(@"YUV数据编码完成");
     if (self.spsAndPpsIsIncludedInIframe == YES) {
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(encoder:h264Data:dataLenth:)]) {

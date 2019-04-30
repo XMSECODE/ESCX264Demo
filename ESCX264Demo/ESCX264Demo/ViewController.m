@@ -52,8 +52,8 @@
 }
 #pragma mark - ESCYUVToH264EncoderDelegate
 - (void)encoder:(ESCYUVToH264Encoder *)encoder h264Data:(void *)h264Data dataLenth:(NSInteger)lenth {
-    NSData *data = [NSData dataWithBytes:h264Data length:lenth > 100 ? 100 :lenth];
-    NSLog(@"编码数据：%@",data);
+//    NSData *data = [NSData dataWithBytes:h264Data length:lenth > 100 ? 100 :lenth];
+//    NSLog(@"编码数据：%@",data);
 }
 
 - (void)encoderEnd:(ESCYUVToH264Encoder *)encoder {
